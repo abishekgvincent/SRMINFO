@@ -1,0 +1,43 @@
+INFO:     Started server process [23516]
+INFO:     Waiting for application startup.
+2026-06-07 21:49:30,768 [INFO] srminfo.app: Starting up SRMINFO Backend...
+2026-06-07 21:49:30,769 [INFO] srminfo.knowledge_loader: KnowledgeLoader initialized with base directory: A:\Projects\SRMINFO\knowledge_base
+2026-06-07 21:49:30,909 [INFO] srminfo.embeddings: EmbeddingGenerator initialized. Device preference: cuda
+2026-06-07 21:49:30,910 [INFO] srminfo.app: Performing initial loading of knowledge base...
+2026-06-07 21:49:30,956 [INFO] srminfo.knowledge_loader: Successfully loaded 16 knowledge documents.
+2026-06-07 21:49:30,957 [INFO] srminfo.search: Generating embeddings for 16 documents...
+2026-06-07 21:49:30,957 [INFO] srminfo.embeddings: Loading SentenceTransformer model 'all-MiniLM-L6-v2' on cuda...
+a:\Projects\SRMINFO\chatbot\Lib\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\Abishek\.cache\huggingface\hub\models--sentence-transformers--all-MiniLM-L6-v2. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+2026-06-07 21:49:34,851 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-07 21:49:52,252 [INFO] srminfo.embeddings: SentenceTransformer model loaded successfully.
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]a:\Projects\SRMINFO\chatbot\Lib\site-packages\transformers\models\bert\modeling_bert.py:413: UserWarning: 1Torch was not compiled with flash attention. (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\aten\src\ATen\native\transformers\cuda\sdp_utils.cpp:555.)
+  attn_output = torch.nn.functional.scaled_dot_product_attention(
+Batches: 100%|##########| 1/1 [00:00<00:00,  1.52it/s]Batches: 100%|##########| 1/1 [00:00<00:00,  1.52it/s]
+2026-06-07 21:49:52,916 [INFO] srminfo.search: Indexing completed successfully.
+2026-06-07 21:49:52,916 [INFO] srminfo.app: SRMINFO Backend initialization complete.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59760 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52953 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65326 - "OPTIONS /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65326 - "POST /chat HTTP/1.1" 200 OK
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 20.21it/s]
+2026-06-07 22:07:58,821 [INFO] srminfo.search: Query: 'What is the admission process?' | Best match ID: 'admission_process' | Similarity: 0.5532
+INFO:     127.0.0.1:65326 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58667 - "GET /health HTTP/1.1" 200 OK
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 73.95it/s]
+2026-06-07 22:08:06,708 [INFO] srminfo.search: Query: 'Show placement statistics' | Best match ID: 'placement_statistics' | Similarity: 0.3478
+2026-06-07 22:08:06,708 [INFO] srminfo.search: Best match score 0.3478 is below threshold 0.45. Returning fallback.
+INFO:     127.0.0.1:58667 - "POST /chat HTTP/1.1" 200 OK
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|##########| 1/1 [00:00<00:00, 91.54it/s]
+2026-06-07 22:08:12,098 [INFO] srminfo.search: Query: 'Is transport available?' | Best match ID: 'transport_info' | Similarity: 0.3701
+2026-06-07 22:08:12,098 [INFO] srminfo.search: Best match score 0.3701 is below threshold 0.45. Returning fallback.
+INFO:     127.0.0.1:59724 - "POST /chat HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62404 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55467 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49244 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64440 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56556 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60707 - "GET /health HTTP/1.1" 200 OK
